@@ -14,7 +14,7 @@ public class task1DZ3 {
         int[] arr = new int[len];
         Random rand = new Random();
 
-        for (int i= 0; i < arr.length; i++)  // заплнение массива случайными числами
+        for (int i= 0; i < arr.length; i++)  
             arr[i] = rand.nextInt(11);
 
         System.out.println(Arrays.toString(arr));
@@ -33,11 +33,9 @@ public class task1DZ3 {
         int[] left = new int[mid];
         int[] right = new int [lenArr-mid];
 
-        for (int i = 0; i < mid; i++) 
-            left[i] = arr[i];
 
-        for (int i = mid; i < lenArr; i++) 
-            right[i-mid] = arr[i];
+        System.arraycopy(arr, 0, left, 0, mid);
+        System.arraycopy(arr, mid, right, 0, (lenArr-mid));
 
 
         mergeSort(left);
